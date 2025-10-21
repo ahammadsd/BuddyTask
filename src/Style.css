@@ -1,140 +1,144 @@
-/* Minimal, clean styles for the Task Manager */
+/* 🌈 TaskBuddy — Simple, Colorful & Fun UI */
 
-* {
-  box-sizing: border-box;
-  
-}
-
-html, body {
+body {
   margin: 0;
-  padding: 0;
-  font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: #f7f7f8;
-  color: #111111;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  min-height: 100vh;
+  color: #222;
 }
 
 .App {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 24px;
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 25px;
+  background: #ffffffcc;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
+/* 🎯 Header */
 header {
-  margin-bottom: 16px;
+  text-align: center;
 }
-
 header h1 {
-  margin: 0 0 4px 0;
-  font-size: 28px;
+  font-size: 34px;
+  color: #ff6b6b;
 }
-
+header h1::before {
+  content: "📝 ";
+}
 header p {
-  margin: 0;
-  color: #555;
+  color: #444;
+  margin-top: 4px;
 }
 
+/* 🧾 Task Form */
 .task-form {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 16px 0;
+  gap: 10px;
+  margin-top: 20px;
 }
-
 #inp {
   display: flex;
-  align-items: center;
-  gap: 8px;
   flex: 1;
-  padding: 8px 10px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  background: #ffffff;
+  gap: 8px;
 }
-
 #inp input {
   flex: 1;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  font-size: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
-
 #inp button {
-  border: 0;
-  background: #111111;
-  color: #ffffff;
-  padding: 8px 12px;
-  border-radius: 6px;
+  background: #4ade80;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
   cursor: pointer;
 }
-
-#btns {
-  display: flex;
-  gap: 8px;
+#inp button::before {
+  content: "➕ ";
 }
-
 #btns select {
-  padding: 8px 10px;
-  border: 1px solid #e5e7eb;
+  padding: 8px;
   border-radius: 6px;
-  background: #ffffff;
+  border: 1px solid #ddd;
 }
 
-.task-list {
+/* ✅ Task List */
+.task-list ul {
   list-style: none;
   padding: 0;
-  margin: 16px 0;
 }
-
 .task-list li {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  padding: 12px;
-  border: 1px solid #eeeeee;
-  border-radius: 8px;
-  background: #ffffff;
 }
-
 .task-list li.completed {
   text-decoration: line-through;
-  opacity: 0.7;
+  opacity: 0.6;
 }
-
 .task-list button {
-  background: none;
-  border: 0;
-  color: #047857;
+  border: none;
   cursor: pointer;
-  padding: 6px 8px;
-  border-radius: 6px;
+  background: none;
+  font-weight: 600;
+}
+.task-list button:first-of-type {
+  color: #16a34a;
+}
+.task-list button:first-of-type::before {
+  content: "✅ ";
+}
+.task-list button:nth-of-type(2) {
+  color: #dc2626;
+}
+.task-list button:nth-of-type(2)::before {
+  content: "🗑️ ";
 }
 
+/* 📊 Progress Bar */
 .progress-tracker {
-    color: aqua;
-  margin-top: 16px;
-  color:red;
+  text-align: center;
+  margin-top: 20px;
+  color: #2563eb;
 }
-
+.progress-tracker::before {
+  content: "📈 ";
+}
 .progress-bar {
   height: 8px;
-  background: #eeeeee;
+  background: #e5e7eb;
   border-radius: 999px;
-  overflow: hidden;
+  margin-top: 6px;
 }
-
 .progress {
   height: 100%;
-  background: #16a34a;
+  background: #22c55e;
+  border-radius: 999px;
 }
 
+/* 🧹 Clear Button */
 .clear-btn {
-  margin-top: 16px;
-  background: #dc2626;
-  color: #ffffff;
-  border: 0;
-  padding: 10px 14px;
-  border-radius: 6px;
+  display: block;
+  margin: 20px auto 0;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
   cursor: pointer;
+  font-weight: 600;
+}
+.clear-btn::before {
+  content: "🧹 ";
 }
